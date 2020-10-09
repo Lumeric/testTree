@@ -1,0 +1,10 @@
+C:\Users\Admin\source\repos\testTree\testTree\bin\Debug\testTree.exe.config
+C:\Users\Admin\source\repos\testTree\testTree\bin\Debug\testTree.exe
+C:\Users\Admin\source\repos\testTree\testTree\bin\Debug\testTree.pdb
+C:\Users\Admin\source\repos\testTree\testTree\obj\Debug\testTree.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\testTree\testTree\obj\Debug\testTree.mainForm.resources
+C:\Users\Admin\source\repos\testTree\testTree\obj\Debug\testTree.Properties.Resources.resources
+C:\Users\Admin\source\repos\testTree\testTree\obj\Debug\testTree.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\testTree\testTree\obj\Debug\testTree.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\testTree\testTree\obj\Debug\testTree.exe
+C:\Users\Admin\source\repos\testTree\testTree\obj\Debug\testTree.pdb

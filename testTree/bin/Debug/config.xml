@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+
+  <configSections>
+    <section name="name" type="main" />
+  </configSections>
+
+  <runtime>
+    <generatePublisherEvidence enabled="false" />
+    <legacyNullReferenceExceptionPolicy enabled="1" />
+    <loadFromRemoteSources enabled="true" />
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v0">
+      <dependentAssembly>
+        <assemblyIdentity name="NLog" publicKeyToken="" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-1.0.0.0" newVersion="1.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-1.0.0.0" newVersion="1.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+
+  <startup>
+    <supportedRuntime version="v5.0" sku=".NETFramework,Version=v5.0.1" />
+  </startup>
+
+  <appSettings>
+    <connectionStrings>
+      <add name="ConnectionString" connectionString="" providerName="System.Data.SqlClient" />
+    </connectionStrings>
+  </appSettings>
+
+  <diagnostics>
+    <sources>
+      <source name="Application" value="Verbose">
+        <listeners>
+          <remove name="Default" />
+          <add name="Log" />
+        </listeners>
+      </source>
+      <source name="Service" value="Verbose">
+        <listeners>
+          <remove name="Default" />
+          <add name="Log" />
+        </listeners>
+      </source>
+    </sources>
+  </diagnostics>
+
+  <serviceModel>
+    <client>
+      <endpoint address="net.tcp://127.0.0.1/" />
+      <endpoint address="net.tcp://192.168.0.1/"/>
+    </client>
+    <behaviors>
+      <clientBehaviors>
+        <behavior name="Data">
+          <synchronization asynchronousSend="true" pool="3" />
+        </behavior>
+        <behavior name="Base">
+          <extensions>
+            <interfaces>127.0.0.1,127.0.0.1,127.0.0.1</interfaces>
+          </extensions>
+        </behavior>
+      </clientBehaviors>
+      <serverBehaviors>
+        <behavior name="Base">
+          <serviceDebug isActive="false" />
+          <extensions />
+        </behavior>
+      </serverBehaviors>
+    </behaviors>
+    <bindings>
+    </bindings>
+    <services>
+      <service name="TestServer">
+        <host>
+          <addresses>
+            <add address="net.tcp://0.0.0.0:1234/" />
+          </addresses>
+        </host>
+      </service>
+      <service name="MainServer">
+        <host>
+          <addresses>
+            <add address="net.tcp://0.0.0.0:5678/" />
+          </addresses>
+        </host>
+      </service>
+    </services>
+  </serviceModel>
+
+</configuration>
